@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Employee({
 	firstName,
 	lastName,
@@ -9,7 +7,11 @@ export default function Employee({
 }) {
 	return (
 		<div className='employee-container'>
-			<img src={image} alt={firstName} style={{ height: '200px' }} />
+			<img
+				src={image}
+				alt={`add img for ${firstName}`}
+				style={{ height: '200px' }}
+			/>
 			<h1>Employee Information</h1>
 			<h2>
 				Full Name:
