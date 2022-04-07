@@ -3,13 +3,13 @@ const employeeRouter = express.Router()
 const Employee = require('../models/employee')
 
 // GET all employees
-employeeRouter.get('/', (res, next) => {
-	Employee.find((err, employee) => {
+employeeRouter.get('/', (req, res, next) => {
+	Employee.find((err, employees) => {
 		if (err) {
 			res.status(500)
 			return next(err)
 		}
-		res.status(200).send(employee)
+		res.status(200).send(employees)
 	})
 })
 
@@ -36,7 +36,7 @@ employeeRouter.post('/', (req, res, next) => {
 	})
 })
 
-//TODO Update Employees information
+// Update Employee information
 employeeRouter.put('/:employeeId', (req, res, next) => {
 	Employee.findOneAndUpdate(
 		{ _id: req.params.employeeId }, //find this one to update
@@ -52,7 +52,7 @@ employeeRouter.put('/:employeeId', (req, res, next) => {
 	)
 })
 
-//TODO Delete employee from the database
+// Delete employee from the database
 employeeRouter.delete('/:employeeId', (req, res, next) => {
 	Employee.findOneAndDelete(
 		{ _id: req.params.employeeId },
@@ -64,7 +64,9 @@ employeeRouter.delete('/:employeeId', (req, res, next) => {
 			return res
 				.status(200)
 				.send(
-					`Successfully deleted employee: ${deletedEmployee.firstName} from the database`
+					`Successfully deleted ${
+						deletedEmployee.firstName + ' ' + deletedEmployee.lastName
+					} from the database`
 				)
 		}
 	)
