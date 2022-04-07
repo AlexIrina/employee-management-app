@@ -3,6 +3,8 @@ const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 
+const PORT = 9000
+
 app.use(express.json())
 app.use(morgan('dev'))
 
@@ -10,7 +12,7 @@ app.use(morgan('dev'))
 mongoose.connect('mongodb://localhost:27017/employeesDB', () => {
 	console.log(`Connected to the DB successfully`)
 })
-
+// routes
 app.use('/employees', require('./routes/employeesRouter'))
 
 // error handling middleware
@@ -19,6 +21,6 @@ app.use((err, req, res, next) => {
 	return res.send({ errorMessage: err.message })
 })
 
-app.listen(9000, () => {
-	console.log('The server is running on local Port 9000!')
+app.listen(PORT, () => {
+	console.log(`The server is running on http://localhost:${PORT}`)
 })
