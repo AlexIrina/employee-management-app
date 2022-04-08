@@ -3,7 +3,7 @@ import axios from 'axios'
 import EmployeeForm from './components/EmployeeForm'
 import Employee from './components/Employee'
 
-function App() {
+export default function App() {
 	const [employees, setEmployees] = useState([])
 
 	// Get all employees
@@ -52,7 +52,6 @@ function App() {
 		if (e.target.value === 'all') {
 			getAllEmployees()
 		} else {
-			// TODO: FIX ME
 			axios
 				.get(`employees/search/classification?classification=${e.target.value}`)
 				.then(res => setEmployees(res.data))
@@ -65,16 +64,16 @@ function App() {
 	}, [])
 
 	return (
-		<div className='employee-container'>
+		<div className='app-container'>
 			<EmployeeForm submit={addEmployee} btnText='Add Employee' />
 
-			<div style={{ textAlign: 'center' }} className='filter-container'>
+			<div className='filter-container'>
 				<h4>Filter Employees</h4>
 
 				<select className='filter-form' onChange={handleFilter}>
 					<option value='all'>All Employees</option>
-					<option value='full time'>Full-time</option>
-					<option value='part time'>Part-time</option>
+					<option value='fulltime'>Full-time</option>
+					<option value='parttime'>Part-time</option>
 					<option value='contract'>Contract</option>
 					<option value='intern'>Interns</option>
 				</select>
@@ -91,5 +90,3 @@ function App() {
 		</div>
 	)
 }
-
-export default App

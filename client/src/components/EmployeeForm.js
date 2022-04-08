@@ -28,7 +28,7 @@ export default function EmployeeForm({
 
 	const handleSubmit = e => {
 		e.preventDefault()
-		//? add a new movie --POST --PUT
+		// add a new employee --POST --PUT
 		submit(inputs, _id)
 		// clears inputs
 		setInputs(initialInputs)
@@ -83,7 +83,7 @@ export default function EmployeeForm({
 					placeholder='enter image...'
 				/>
 			</div>
-			<button className='btn '>{btnText}</button>
+			<button className='add-btn '>{btnText}</button>
 		</form>
 	)
 }

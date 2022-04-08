@@ -2,6 +2,8 @@
 ::after,
 ::before {
 	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 /* fonts */
 @import url('https://fonts.googleapis.com/css?family=Karla:400|Spectral:400');
@@ -121,7 +123,21 @@ ul {
 	object-fit: cover;
 }
 /* buttons */
-.btn {
+.add-btn {
+	cursor: pointer;
+	color: var(--white);
+	background: var(--green-dark);
+	border: transparent;
+	border-radius: var(--borderRadius);
+	letter-spacing: var(--letterSpacing);
+	padding: 0.375rem 0.75rem;
+	box-shadow: var(--shadow-1);
+	transition: var(--transition);
+	text-transform: capitalize;
+	display: inline-block;
+}
+
+.delete-btn {
 	cursor: pointer;
 	color: var(--white);
 	background: var(--primary-500);
@@ -134,58 +150,56 @@ ul {
 	text-transform: capitalize;
 	display: inline-block;
 }
-.btn:hover {
-	background: var(--primary-700);
-	box-shadow: var(--shadow-3);
+
+.edit-btn {
+	cursor: pointer;
+	color: var(--primary-800);
+	background: var(--green-light);
+	border: transparent;
+	border-radius: var(--borderRadius);
+	letter-spacing: var(--letterSpacing);
+	padding: 0.375rem 0.75rem;
+	box-shadow: var(--shadow-1);
+	transition: var(--transition);
+	text-transform: capitalize;
+	display: inline-block;
 }
-.btn-hipster {
-	color: var(--primary-500);
-	background: var(--primary-200);
-}
-.btn-hipster:hover {
-	color: var(--primary-200);
-	background: var(--primary-700);
-}
-.btn-block {
-	width: 100%;
+
+.close-btn {
+	cursor: pointer;
+	color: var(--white);
+	background: var(--red-dark);
+	border: transparent;
+	border-radius: var(--borderRadius);
+	letter-spacing: var(--letterSpacing);
+	padding: 0.375rem 0.75rem;
+	box-shadow: var(--shadow-1);
+	transition: var(--transition);
+	text-transform: capitalize;
+	display: inline-block;
 }
 
 /* form */
 
-.form {
-	width: 90vw;
-	max-width: var(--fixed-width);
-	background: var(--white);
-	border-radius: var(--borderRadius);
-	box-shadow: var(--shadow-2);
-	padding: 2rem 2.5rem;
-	margin: 3rem auto;
-}
-
-input {
-	width: 100%;
-	padding: 0.375rem 0.75rem;
-	border-radius: var(--borderRadius);
-	background: var(--backgroundColor);
-	border: 1px solid var(--grey-200);
-}
-
 /* title */
 
-.title {
-	text-align: center;
+.app-container {
 }
 
 .employee-container {
-	display: grid;
-	place-content: center;
-	padding: 10px;
 }
-.employee {
+
+.employee-card {
 	text-align: center;
-	padding: 10px;
-	margin: 1px;
-	border: 1px solid #333;
+	padding: 20px;
+	margin: 10px;
+	border: 1px solid var(--primary-500);
+	border-radius: 5px;
+	max-width: 350px;
+	background-color: var(--primary-100);
+}
+
+.filter-container {
 }
 .filter-form {
 	width: 200px;
