@@ -24,6 +24,20 @@ employeeRouter.get('/:employeeId', (req, res, next) => {
 	})
 })
 
+//TODO: specific request to search by classification ---employees/search/classification?classification=fulltime
+employeeRouter.get('/search/classification', (req, res, next) => {
+	Employee.find(
+		{ classification: req.query.classification },
+		(err, employees) => {
+			if (err) {
+				res.status(500)
+				return next(err)
+			}
+			return res.status(201).send(employees)
+		}
+	)
+})
+
 //POST/Add new employees
 employeeRouter.post('/', (req, res, next) => {
 	const newEmployee = new Employee(req.body)

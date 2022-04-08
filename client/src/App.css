@@ -162,6 +162,14 @@ ul {
 	margin: 3rem auto;
 }
 
+input {
+	width: 100%;
+	padding: 0.375rem 0.75rem;
+	border-radius: var(--borderRadius);
+	background: var(--backgroundColor);
+	border: 1px solid var(--grey-200);
+}
+
 /* title */
 
 .title {
@@ -181,16 +189,4 @@ ul {
 }
 .filter-form {
 	width: 200px;
-}
-/* inputs */
-.inputs-container {
-	padding: 10px;
-}
-
-inputs {
-	width: 100%;
-	padding: 0.375rem 0.75rem;
-	border-radius: var(--borderRadius);
-	background: var(--backgroundColor);
-	border: 1px solid var(--grey-200);
 }
