@@ -24,7 +24,7 @@ employeeRouter.get('/:employeeId', (req, res, next) => {
 	})
 })
 
-//TODO: specific request to search by classification ---employees/search/classification?classification=fulltime
+// specific request to search by classification ---employees/search/classification?classification=fulltime
 employeeRouter.get('/search/classification', (req, res, next) => {
 	Employee.find(
 		{ classification: req.query.classification },
