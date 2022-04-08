@@ -1,11 +1,12 @@
 import { useState } from 'react'
 
-export default function AddMovieForm({
+export default function EmployeeForm({
 	firstName,
 	lastName,
 	email,
 	phoneNumber,
 	image,
+	classification,
 	submit,
 	_id,
 	btnText,
@@ -16,6 +17,7 @@ export default function AddMovieForm({
 		email: email || '',
 		phoneNumber: phoneNumber || '',
 		image: image || '',
+		classification: classification || '',
 	}
 	const [inputs, setInputs] = useState(initialInputs)
 
@@ -65,6 +67,13 @@ export default function AddMovieForm({
 					value={inputs.phoneNumber}
 					onChange={handleChange}
 					placeholder='enter phone number...'
+				/>
+				<input
+					type='text'
+					name='classification'
+					value={inputs.classification}
+					onChange={handleChange}
+					placeholder='enter classification'
 				/>
 				<input
 					type='text'

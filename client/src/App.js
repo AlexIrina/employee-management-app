@@ -47,6 +47,18 @@ function App() {
 			.catch(err => console.log(err))
 	}
 
+	const handleFilter = e => {
+		if (e.target.value === 'reset') {
+			getAllEmployees()
+		} else {
+			// TODO: FIX ME
+			axios
+				.get(`employees/search/classification?classification=${e.target.value}`)
+				.then(res => setEmployees(res.data))
+				.catch(err => console.error(err))
+		}
+	}
+
 	useEffect(() => {
 		getAllEmployees()
 	}, [])
@@ -58,10 +70,10 @@ function App() {
 			<div style={{ textAlign: 'center' }} className='filter-container'>
 				<h4>Filter Employees</h4>
 
-				<select className='filter-form'>
+				<select className='filter-form' onChange={handleFilter}>
 					<option value='reset'>All Employees</option>
-					<option value='fulltime'>Fill-time</option>
-					<option value='parttime'>Part-time</option>
+					<option value='full time'>Full-time</option>
+					<option value='part time'>Part-time</option>
 					<option value='contract'>Contract</option>
 					<option value='intern'>Interns</option>
 				</select>
