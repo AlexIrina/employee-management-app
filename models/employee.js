@@ -18,6 +18,12 @@ const employeeSchema = new Schema({
 		type: Number,
 		required: true,
 	},
+	classification: {
+		type: String,
+		// TODO fix me
+		enum: ['full time', 'part time', 'contract', 'intern'],
+		// required: true,
+	},
 	image: {
 		type: String,
 	},
