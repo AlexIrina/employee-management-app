@@ -55,6 +55,18 @@ function App() {
 		<div className='employee-container'>
 			<EmployeeForm submit={addEmployee} btnText='Add Employee' />
 
+			<div style={{ textAlign: 'center' }} className='filter-container'>
+				<h4>Filter Employees</h4>
+
+				<select className='filter-form'>
+					<option value='reset'>All Employees</option>
+					<option value='fulltime'>Fill-time</option>
+					<option value='parttime'>Part-time</option>
+					<option value='contract'>Contract</option>
+					<option value='intern'>Interns</option>
+				</select>
+			</div>
+
 			{employees.map(employee => (
 				<Employee
 					key={employee._id}
