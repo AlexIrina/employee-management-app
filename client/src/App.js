@@ -34,11 +34,12 @@ function App() {
 			.catch(err => console.log(err))
 	}
 	// update employee
-	const editEmployee = (updates, employeeId) => {
+	const updateEmployee = (updates, employeeId) => {
 		axios
 			.put(`/employees/${employeeId}`, updates)
 			.then(res => {
 				setEmployees(prevEmployees =>
+					// return employee as it is if it wasn't updated else return the updated employee res.data
 					prevEmployees.map(employee =>
 						employee._id !== employeeId ? employee : res.data
 					)
@@ -48,7 +49,7 @@ function App() {
 	}
 
 	const handleFilter = e => {
-		if (e.target.value === 'reset') {
+		if (e.target.value === 'all') {
 			getAllEmployees()
 		} else {
 			// TODO: FIX ME
@@ -71,7 +72,7 @@ function App() {
 				<h4>Filter Employees</h4>
 
 				<select className='filter-form' onChange={handleFilter}>
-					<option value='reset'>All Employees</option>
+					<option value='all'>All Employees</option>
 					<option value='full time'>Full-time</option>
 					<option value='part time'>Part-time</option>
 					<option value='contract'>Contract</option>
@@ -84,7 +85,7 @@ function App() {
 					key={employee._id}
 					{...employee}
 					deleteEmployee={deleteEmployee}
-					editEmployee={editEmployee}
+					updateEmployee={updateEmployee}
 				/>
 			))}
 		</div>
