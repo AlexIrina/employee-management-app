@@ -20,21 +20,26 @@ export default function Employee({
 	}
 
 	return (
-		<div className='employee-card'>
+		<article className='article-summary'>
 			{!editToggle ? (
 				<>
-					<h2>
-						Full Name:
-						{firstName} {lastName}
-					</h2>
-					<img
-						src={image}
-						alt={`add img for ${firstName}`}
-						style={{ height: '200px' }}
-					/>
-					<p>Classification:{classification}</p>
-					<p>Email: {email}</p>
-					<p>Phone number: {phoneNumber}</p>
+					<div class='image-wrapper'>
+						<img
+							src={image}
+							alt={`add img for ${firstName}`}
+							style={{ height: '200px' }}
+						/>
+					</div>
+					<div class='description'>
+						<h3>
+							Full Name:
+							{firstName} {lastName}
+						</h3>
+
+						<p>Classification:{classification}</p>
+						<p>Email: {email}</p>
+						<p>Phone number: {phoneNumber}</p>
+					</div>
 					<div className='btn-container'>
 						<button
 							onClick={() => deleteEmployee(_id)}
@@ -73,6 +78,6 @@ export default function Employee({
 					</button>
 				</>
 			)}
-		</div>
+		</article>
 	)
 }

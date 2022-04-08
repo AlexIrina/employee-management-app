@@ -64,7 +64,7 @@ export default function App() {
 	}, [])
 
 	return (
-		<div className='app-container'>
+		<div>
 			<EmployeeForm submit={addEmployee} btnText='Add Employee' />
 
 			<div className='filter-container'>
@@ -78,15 +78,16 @@ export default function App() {
 					<option value='intern'>Interns</option>
 				</select>
 			</div>
-
-			{employees.map(employee => (
-				<Employee
-					key={employee._id}
-					{...employee}
-					deleteEmployee={deleteEmployee}
-					updateEmployee={updateEmployee}
-				/>
-			))}
+			<main>
+				{employees.map(employee => (
+					<Employee
+						key={employee._id}
+						{...employee}
+						deleteEmployee={deleteEmployee}
+						updateEmployee={updateEmployee}
+					/>
+				))}
+			</main>
 		</div>
 	)
 }
