@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import EmployeeForm from './components/EmployeeForm'
 import Employee from './components/Employee'
 
 function App() {
 	const [employees, setEmployees] = useState([])
 
-	//TODO Get all employees
+	// Get all employees
 	const getAllEmployees = () => {
 		axios
 			.get('/employees')
@@ -14,7 +14,7 @@ function App() {
 			.catch(err => console.log(err.response.data.errorMessage))
 	}
 
-	//TODO Post a new employee
+	// Post a new employee
 	const addEmployee = newEmployee => {
 		axios
 			.post('/employees', newEmployee)
@@ -22,7 +22,7 @@ function App() {
 			.catch(err => console.log(err))
 	}
 
-	//TODO delete an employee
+	// delete an employee
 	const deleteEmployee = employeeId => {
 		axios
 			.delete(`/employees/${employeeId}`)
@@ -33,7 +33,7 @@ function App() {
 			})
 			.catch(err => console.log(err))
 	}
-	//TODO update employee
+	// update employee
 	const editEmployee = (updates, employeeId) => {
 		axios
 			.put(`/employees/${employeeId}`, updates)
@@ -52,7 +52,9 @@ function App() {
 	}, [])
 
 	return (
-		<div className='App'>
+		<div className='employee-container'>
+			<EmployeeForm submit={addEmployee} btnText='Add Employee' />
+
 			{employees.map(employee => (
 				<Employee
 					key={employee._id}
