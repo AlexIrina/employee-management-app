@@ -23,14 +23,14 @@ export default function Employee({
 		<article className='article-summary'>
 			{!editToggle ? (
 				<>
-					<div class='image-wrapper'>
+					<div className='image-wrapper'>
 						<img
 							src={image}
 							alt={`add img for ${firstName}`}
 							style={{ height: '200px' }}
 						/>
 					</div>
-					<div class='description'>
+					<div className='description'>
 						<h3>
 							Full Name:
 							{firstName} {lastName}
