@@ -1,22 +1,21 @@
 const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const cors = require('cors')
+// const cors = require('cors')
+const path = require('path')
 
 const app = express()
 
-app.use(cors())
+// app.use(cors())
 app.use(express.json())
 
 app.use(morgan('dev'))
 
-const CONNECTION_URL =
-	'mongodb+srv://mongoAtlas:mpnoJWuGsEf4wPZz@cluster0.ugdcl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-const PORT = process.env.PORT || 9000
+app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 // connect to DB
 mongoose.connect(
-	CONNECTION_URL,
+	MONGO_URI,
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 	() => {
 		console.log(`Connected to Atlas DB`)
@@ -29,6 +28,10 @@ app.use('/employees', require('./routes/employeesRouter'))
 app.use((err, req, res, next) => {
 	console.log(err)
 	return res.send({ errorMessage: err.message })
+})
+
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 })
 
 app.listen(PORT, () => {

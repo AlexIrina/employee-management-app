@@ -4,7 +4,8 @@
 	"description": "Ultra simplified fullstack employee management CRUD app.",
 	"main": "server.js",
 	"scripts": {
-		"start": "nodemon server.js"
+		"start": "nodemon server.js",
+		"heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
 	},
 	"keywords": [],
 	"author": "",
@@ -16,5 +17,8 @@
 		"mongoose": "^6.2.10",
 		"morgan": "^1.10.0",
 		"nodemon": "^2.0.15"
-	}
+	},
+	"engines": {
+    "node": "16.14.2"
+}
 }
