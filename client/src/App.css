@@ -68,7 +68,7 @@ body {
 
 .App {
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -83,11 +83,11 @@ h1 {
 	font-family: var(headingFont);
 	margin-bottom: 20px;
 	font-weight: 700;
+	text-align: center;
 }
 
 /* form */
 form {
-	outline: 1px solid black;
 	padding: 0.5em;
 	background-color: var(--grey-400);
 }
@@ -287,8 +287,8 @@ a:hover {
 	border: 3px solid black;
 	box-shadow: 6px 6px 0px hsl(0deg 0% 0% / 0.15);
 	text-align: center;
-	min-width: 450px;
-	max-width: 450px;
+	min-width: 350px;
+	max-width: 400px;
 	font-size: 18px;
 }
 

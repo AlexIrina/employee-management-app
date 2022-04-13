@@ -39,7 +39,7 @@ export default function EmployeeForm({
 	useEffect(() => {
 		console.log(refContainer.current)
 		refContainer.current.focus()
-	}, [])
+	})
 
 	return (
 		<form
