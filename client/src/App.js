@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import EmployeeForm from './components/EmployeeForm'
 import Employee from './components/Employee'
+import SearchBar from './components/SearchBar'
 
 export default function App() {
 	const [employees, setEmployees] = useState([])
@@ -64,21 +65,26 @@ export default function App() {
 	}, [])
 
 	return (
-		<div>
-			<EmployeeForm submit={addEmployee} btnText='Add' />
+		<div className='App'>
+			<h1>Employee Management App</h1>
+
+			<EmployeeForm submit={addEmployee} btnText='Add Employee' />
+			{/*// TODO add search input */}
+			<SearchBar placeholder='Search By Name... ' data={employees} />
 
 			<div className='filter-container'>
-				<h4>Filter Employees</h4>
+				<h2>Filter Employees</h2>
 
 				<select className='filter-form' onChange={handleFilter}>
-					{/* <option value='all'>All Employees</option>
+					<option value='all'>All Employees</option>
 					<option value='fulltime'>Full-time</option>
 					<option value='parttime'>Part-time</option>
 					<option value='contract'>Contract</option>
-					<option value='intern'>Interns</option> */}
+					<option value='intern'>Interns</option>
 				</select>
 			</div>
-			<main>
+
+			<div className='employee-container'>
 				{employees.map(employee => (
 					<Employee
 						key={employee._id}
@@ -87,7 +93,7 @@ export default function App() {
 						updateEmployee={updateEmployee}
 					/>
 				))}
-			</main>
+			</div>
 		</div>
 	)
 }
