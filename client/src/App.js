@@ -71,11 +71,11 @@ export default function App() {
 				<h4>Filter Employees</h4>
 
 				<select className='filter-form' onChange={handleFilter}>
-					{/* <option value='all'>All Employees</option>
+					<option value='all'>All Employees</option>
 					<option value='fulltime'>Full-time</option>
 					<option value='parttime'>Part-time</option>
 					<option value='contract'>Contract</option>
-					<option value='intern'>Interns</option> */}
+					<option value='intern'>Interns</option>
 				</select>
 			</div>
 			<main>
