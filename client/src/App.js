@@ -65,7 +65,7 @@ export default function App() {
 
 	return (
 		<div>
-			<EmployeeForm submit={addEmployee} btnText='Add Employee' />
+			<EmployeeForm submit={addEmployee} btnText='Add' />
 
 			<div className='filter-container'>
 				<h4>Filter Employees</h4>
