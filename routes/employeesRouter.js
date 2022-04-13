@@ -24,6 +24,25 @@ employeeRouter.get('/:employeeId', (req, res, next) => {
 	})
 })
 
+// TODO get employee(s) by search term localhost:9000/employees/search?employee=na  -->returns Nadia
+employeeRouter.get('/search', (req, res, next) => {
+	// search term
+	const { employee } = req.query
+	// creates a regular expression out of the string "employee"
+	const pattern = new RegExp(employee) // -- /employee/
+	// find all employees by firstName. $options: 'i'  Case insensitive -lower or uppercase
+	Employee.find(
+		{ firstName: { $regex: pattern, $options: 'i' } },
+		(err, employees) => {
+			if (err) {
+				res.status(500)
+				return next(err)
+			}
+			return res.status(200).send(employees)
+		}
+	)
+})
+
 // specific request to search by classification ---employees/search/classification?classification=fulltime
 employeeRouter.get('/search/classification', (req, res, next) => {
 	Employee.find(

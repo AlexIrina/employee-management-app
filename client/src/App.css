@@ -44,7 +44,7 @@
 	--bodyFont: 'Karla', sans-serif;
 	--smallText: 0.7em;
 	/* rest of the vars */
-	--backgroundColor: var(--grey-50);
+	--backgroundColor: var(--grey-100);
 	--textColor: var(--grey-900);
 	--borderRadius: 0.25rem;
 	--letterSpacing: 1px;
@@ -62,13 +62,53 @@
 		0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-body {
-	background: var(--backgroundColor);
+.App {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	font-family: var(--bodyFont);
+	color: var(--textColor);
+	background: var(--backgroundColor);
 	font-weight: 400;
 	line-height: 1.75;
-	color: var(--textColor);
 }
+
+/* search bar */
+
+.searchInputs {
+	margin-top: 20px;
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.search input {
+	background-color: var(--white);
+	color: white;
+	border: 0;
+	border-radius: 2px;
+	font-size: 18px;
+	padding: 15px;
+	height: 30px;
+	width: 300px;
+}
+
+.searchIcon {
+	height: 60px;
+	width: 50px;
+	background-color: white;
+	display: grid;
+	place-items: center;
+}
+input:focus {
+	outline: none;
+}
+
+searchIcon svg {
+	font-size: 35px;
+}
+
 form {
 	display: flex;
 	max-width: 500px;

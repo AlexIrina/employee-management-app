@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import EmployeeForm from './components/EmployeeForm'
 import Employee from './components/Employee'
+import SearchBar from './components/SearchBar'
 
 export default function App() {
 	const [employees, setEmployees] = useState([])
@@ -64,11 +65,10 @@ export default function App() {
 	}, [])
 
 	return (
-		<div>
+		<div className='App'>
 			<EmployeeForm submit={addEmployee} btnText='Add' />
-
-
-			
+			{/*// TODO add search input */}
+			<SearchBar placeholder='Search By Name... ' data={employees} />
 
 			<div className='filter-container'>
 				<h4>Filter Employees</h4>
