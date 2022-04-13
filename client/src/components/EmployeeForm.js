@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 export default function EmployeeForm({
 	firstName,
@@ -19,7 +19,9 @@ export default function EmployeeForm({
 		image: image || '',
 		classification: classification || '',
 	}
+
 	const [inputs, setInputs] = useState(initialInputs)
+	const refContainer = useRef(null)
 
 	const handleChange = e => {
 		const { name, value } = e.target
@@ -33,6 +35,12 @@ export default function EmployeeForm({
 		// clears inputs
 		setInputs(initialInputs)
 	}
+
+	useEffect(() => {
+		console.log(refContainer.current)
+		refContainer.current.focus()
+	}, [])
+
 	return (
 		<form
 			onSubmit={handleSubmit}
@@ -42,6 +50,7 @@ export default function EmployeeForm({
 			<div className='inputs-container'>
 				<input
 					type='text'
+					ref={refContainer}
 					name='firstName'
 					value={inputs.firstName}
 					onChange={handleChange}
