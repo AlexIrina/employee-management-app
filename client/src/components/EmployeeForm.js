@@ -82,8 +82,9 @@ export default function EmployeeForm({
 					onChange={handleChange}
 					placeholder='enter image...'
 				/>
+				<br />
+				<button className='add-btn '>{btnText}</button>
 			</div>
-			<button className='add-btn '>{btnText}</button>
 		</form>
 	)
 }

@@ -66,12 +66,14 @@ export default function App() {
 
 	return (
 		<div className='App'>
-			<EmployeeForm submit={addEmployee} btnText='Add' />
+			<h1>Employee Management App</h1>
+
+			<EmployeeForm submit={addEmployee} btnText='Add Employee' />
 			{/*// TODO add search input */}
 			<SearchBar placeholder='Search By Name... ' data={employees} />
 
 			<div className='filter-container'>
-				<h4>Filter Employees</h4>
+				<h2>Filter Employees</h2>
 
 				<select className='filter-form' onChange={handleFilter}>
 					<option value='all'>All Employees</option>
@@ -81,7 +83,8 @@ export default function App() {
 					<option value='intern'>Interns</option>
 				</select>
 			</div>
-			<main>
+
+			<div className='employee-container'>
 				{employees.map(employee => (
 					<Employee
 						key={employee._id}
@@ -90,7 +93,7 @@ export default function App() {
 						updateEmployee={updateEmployee}
 					/>
 				))}
-			</main>
+			</div>
 		</div>
 	)
 }
