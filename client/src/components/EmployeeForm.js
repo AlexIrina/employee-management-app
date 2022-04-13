@@ -47,6 +47,7 @@ export default function EmployeeForm({
 					onChange={handleChange}
 					placeholder='enter firstName...'
 				/>
+
 				<input
 					type='text'
 					name='lastName'

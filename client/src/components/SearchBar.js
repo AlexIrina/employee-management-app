@@ -42,7 +42,7 @@ export default function SearchBar({ placeholder, data }) {
 			</div>
 			{filterData.length !== 0 && (
 				<div className='dataResult'>
-					{filterData.slice(0, 1).map((value, key) => (
+					{filterData.slice(0, 2).map((value, key) => (
 						<a
 							key={key}
 							className='dataItem'

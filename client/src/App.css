@@ -88,6 +88,7 @@ h1 {
 form {
 	outline: 1px solid black;
 	padding: 0.5em;
+	background-color: var(--grey-400);
 }
 
 .inputs-container {
@@ -208,7 +209,7 @@ a:hover {
 	align-items: center;
 	width: 100%;
 	gap: 10px;
-	background-color: var(--grey-400);
+
 	padding: 0.5em 0.5em 0.5em;
 }
 
