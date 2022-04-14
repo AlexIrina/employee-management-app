@@ -3,7 +3,7 @@ import axios from 'axios'
 import EmployeeForm from './components/EmployeeForm'
 import Employee from './components/Employee'
 import SearchBar from './components/SearchBar'
-
+import AddCardIcon from '@mui/icons-material/AddCard'
 export default function App() {
 	const [employees, setEmployees] = useState([])
 
@@ -66,10 +66,10 @@ export default function App() {
 
 	return (
 		<div className='App'>
-			<h1>Employee Management App</h1>
+			<h1 data-testid='myTitle'>Employee Management App</h1>
 
-			<EmployeeForm submit={addEmployee} btnText='Add Employee' />
-			{/*// TODO add search input */}
+			<EmployeeForm submit={addEmployee} btnText={<AddCardIcon />} />
+
 			<SearchBar placeholder='Search By Name... ' data={employees} />
 
 			<div className='filter-container'>
