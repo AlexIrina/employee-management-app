@@ -89,7 +89,13 @@ h1 {
 /* form */
 form {
 	padding: 0.5em;
-	background-color: var(--grey-400);
+	background-color: rebeccapurple;
+	box-shadow: 6px 6px 0px hsl(0deg 0% 0% / 0.15);
+	text-align: center;
+	min-height: 250px;
+	max-width: 400px;
+	border-radius: 5px;
+	font-size: 18px;
 }
 
 .inputs-container {
@@ -101,16 +107,6 @@ form {
 	justify-content: center;
 	width: 100%;
 	margin-top: 10px;
-}
-
-.inputs-container {
-	padding: 10px;
-	display: flex;
-
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
 }
 
 .inputs-container input {
@@ -130,11 +126,12 @@ form {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 200px;
-	margin: 50px;
+	height: 100px;
 }
 .searchInputs {
 	display: flex;
+	outline: 1px solid;
+	border-radius: 5px;
 }
 
 .search input {
@@ -203,14 +200,13 @@ a:hover {
 
 .employee-container {
 	display: flex;
-	background-color: var(--grey-200);
+
 	flex-direction: column;
 	justify-content: center;
 	flex-wrap: wrap;
 	align-items: center;
 	width: 100%;
 	gap: 10px;
-
 	padding: 0.5em 0.5em 0.5em;
 }
 
@@ -224,11 +220,18 @@ a:hover {
 	font-size: 16px;
 }
 
+.btn-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 10px;
+}
+
 /* buttons */
 .add-btn {
 	cursor: pointer;
 	color: var(--white);
-	background: var(--green-dark);
+	background: black;
 	border: transparent;
 	border-radius: var(--borderRadius);
 	letter-spacing: var(--letterSpacing);
@@ -244,7 +247,7 @@ a:hover {
 .delete-btn {
 	cursor: pointer;
 	color: var(--white);
-	background: var(--primary-500);
+	background: rebeccapurple;
 	border: transparent;
 	border-radius: var(--borderRadius);
 	letter-spacing: var(--letterSpacing);
@@ -257,7 +260,7 @@ a:hover {
 .edit-btn {
 	cursor: pointer;
 	color: var(--primary-800);
-	background: var(--green-light);
+	background: orange;
 	border: transparent;
 	border-radius: var(--borderRadius);
 	letter-spacing: var(--letterSpacing);
@@ -268,23 +271,23 @@ a:hover {
 }
 
 .close-btn {
+	position: relative;
+	top: 10px;
 	cursor: pointer;
-	color: var(--white);
-	background: var(--red-dark);
+	color: red;
+	margin: 0;
+	padding: 0;
 	border: transparent;
 	border-radius: var(--borderRadius);
-	letter-spacing: var(--letterSpacing);
-	padding: 0.375rem 0.75rem;
-	box-shadow: var(--shadow-1);
-	transition: var(--transition);
-	text-transform: capitalize;
+	background-color: white;
 }
 
 .article-summary {
+	border-radius: 5px;
 	flex: 1;
 	padding: 12px;
 	background: white;
-	border: 3px solid black;
+	border: 0.5px solid black;
 	box-shadow: 6px 6px 0px hsl(0deg 0% 0% / 0.15);
 	text-align: center;
 	min-width: 350px;
