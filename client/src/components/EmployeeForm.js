@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 
 export default function EmployeeForm({
@@ -53,7 +54,9 @@ export default function EmployeeForm({
 					name='firstName'
 					value={inputs.firstName}
 					onChange={handleChange}
-					placeholder='enter firstName...'
+					placeholder='enter first name...'
+					className={inputs.firstName.length ? '' : 'error'}
+					required
 				/>
 
 				<input
@@ -61,7 +64,8 @@ export default function EmployeeForm({
 					name='lastName'
 					value={inputs.lastName}
 					onChange={handleChange}
-					placeholder='enter lastName...'
+					placeholder='enter last name...'
+					required
 				/>
 				<input
 					type='text'
@@ -69,6 +73,7 @@ export default function EmployeeForm({
 					value={inputs.email}
 					onChange={handleChange}
 					placeholder='enter email...'
+					required
 				/>
 				<input
 					type='number'
@@ -76,6 +81,7 @@ export default function EmployeeForm({
 					value={inputs.phoneNumber}
 					onChange={handleChange}
 					placeholder='enter phone number...'
+					required
 				/>
 				<input
 					type='text'
@@ -83,6 +89,7 @@ export default function EmployeeForm({
 					value={inputs.classification}
 					onChange={handleChange}
 					placeholder='enter classification'
+					required
 				/>
 				<input
 					type='text'
@@ -90,6 +97,7 @@ export default function EmployeeForm({
 					value={inputs.image}
 					onChange={handleChange}
 					placeholder='enter image...'
+					required
 				/>
 				<br />
 				<button className='add-btn '>{btnText}</button>

@@ -21,7 +21,7 @@ const employeeSchema = new Schema({
 	classification: {
 		type: String,
 		enum: ['fulltime', 'parttime', 'contract', 'intern'],
-		// required: true,
+		required: true,
 	},
 	image: {
 		type: String,

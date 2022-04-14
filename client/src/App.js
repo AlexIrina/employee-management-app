@@ -27,11 +27,7 @@ export default function App() {
 	const deleteEmployee = employeeId => {
 		axios
 			.delete(`/employees/${employeeId}`)
-			.then(res => {
-				setEmployees(prevEmployees =>
-					prevEmployees.filter(employee => employee._id !== employeeId)
-				)
-			})
+			.then(res => setEmployees(res.data))
 			.catch(err => console.log(err))
 	}
 	// update employee
@@ -46,6 +42,14 @@ export default function App() {
 					)
 				)
 			})
+			.catch(err => console.log(err))
+	}
+
+	// get employee by search term
+	const getEmployeeBySearchTerm = searchTerm => {
+		axios
+			.get(`/employees/search/employee?employee=${searchTerm}`)
+			.then(res => setEmployees(res.data))
 			.catch(err => console.log(err))
 	}
 
@@ -70,7 +74,11 @@ export default function App() {
 
 			<EmployeeForm submit={addEmployee} btnText={<AddCardIcon />} />
 
-			<SearchBar placeholder='Search By Name... ' data={employees} />
+			<SearchBar
+				placeholder='Search By Name... '
+				data={employees}
+				getEmployeeBySearchTerm={getEmployeeBySearchTerm}
+			/>
 
 			<div className='filter-container'>
 				<h2>Filter Employees</h2>

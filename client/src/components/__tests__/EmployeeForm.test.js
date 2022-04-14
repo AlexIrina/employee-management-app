@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 
 test('firstName input should be rendered', () => {
 	render(<EmployeeForm />)
-	const userInputEl = screen.getByPlaceholderText(/enter firstName.../i)
+	const userInputEl = screen.getByPlaceholderText(/enter first name.../i)
 	expect(userInputEl).toBeInTheDocument()
 })
 
