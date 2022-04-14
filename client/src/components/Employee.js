@@ -27,6 +27,9 @@ export default function Employee({
 			{!editToggle ? (
 				<>
 					<div className='image-wrapper'>
+						<h2>
+							{firstName} {lastName}
+						</h2>
 						<img
 							src={image}
 							alt={`add img for ${firstName}`}
@@ -34,13 +37,9 @@ export default function Employee({
 						/>
 					</div>
 					<div className='description'>
-						<h3>
-							Full Name: {firstName} {lastName}
-						</h3>
-
-						<p>Classification: {classification}</p>
-						<p>Email: {email}</p>
-						<p>Phone number: {phoneNumber}</p>
+						<p> {classification} employee</p>
+						<p> Email: {email}</p>
+						<p> Phone# {phoneNumber}</p>
 					</div>
 					<div className='btn-container'>
 						<button
@@ -77,7 +76,7 @@ export default function Employee({
 						className='close-btn'
 						onClick={() => setEditToggle(prevToggle => !prevToggle)}
 					>
-						<CloseIcon />
+						<CloseIcon className='closeIcon' />
 					</button>
 				</>
 			)}
