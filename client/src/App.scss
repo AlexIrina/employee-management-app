@@ -81,7 +81,7 @@ body {
 		strong {
 			color: red;
 		}
-		plus {
+		span {
 			color: black;
 		}
 	}
@@ -307,7 +307,7 @@ a {
 	width: $width100P;
 	padding: $padding;
 	background-color: white;
-	padding: 0.99rem 0.75rem;
+	padding: 2.2rem 0.75rem;
 	svg {
 		font-size: 30px;
 	}
@@ -344,6 +344,24 @@ a {
 			gap: 10px;
 			svg {
 				padding: 0;
+			}
+		}
+		#employeeId {
+			span {
+				color: rgb(94, 90, 90);
+			}
+			svg {
+				color: orange;
+			}
+		}
+		#employeeEmail {
+			svg {
+				color: brown;
+			}
+		}
+		#employeeNumber {
+			svg {
+				color: blue;
 			}
 		}
 	}

@@ -76,14 +76,14 @@ export default function EmployeeForm({
 					pattern='.+@gmail\.com'
 				/>
 				<input
-					type='tel'
+					type='text'
 					name='phoneNumber'
 					value={inputs.phoneNumber}
 					onChange={handleChange}
-					placeholder='333-4444-4444'
+					placeholder='enter phone number...'
 					className={inputs.phoneNumber ? '' : 'error'}
 					required
-					pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+					pattern='[0-9]{3}[0-9]{3}[0-9]{4}'
 				/>
 				<input
 					type='text'
@@ -92,6 +92,7 @@ export default function EmployeeForm({
 					onChange={handleChange}
 					placeholder='enter classification...'
 					className={inputs.classification.length ? '' : 'error'}
+					// oninvalid={this.setCustomValidity('Please Enter valid email')}
 					required
 				/>
 				<input
