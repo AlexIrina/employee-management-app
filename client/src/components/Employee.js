@@ -58,7 +58,7 @@ export default function Employee({
 						<p id='employeeNumber'>
 							{' '}
 							<LocalPhoneSharpIcon />
-							<a href={`tel::${phoneNumber}`}>{phoneNumber}</a>
+							<a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
 						</p>
 					</div>
 					<div className='btn-container'>
