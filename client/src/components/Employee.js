@@ -3,7 +3,9 @@ import EmployeeForm from './EmployeeForm'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ModeEditIcon from '@mui/icons-material/ModeEdit'
-
+import MailOutlineTwoToneIcon from '@mui/icons-material/MailOutlineTwoTone'
+import LocalPhoneSharpIcon from '@mui/icons-material/LocalPhoneSharp'
+import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges'
 export default function Employee({
 	firstName,
 	lastName,
@@ -37,9 +39,20 @@ export default function Employee({
 						/>
 					</div>
 					<div className='description'>
-						<p> {classification} employee</p>
-						<p> Email: {email}</p>
-						<p> Phone# {phoneNumber}</p>
+						<p>
+							{' '}
+							{classification.charAt(0).toUpperCase() +
+								classification.slice(1)}{' '}
+							Employee
+						</p>
+						<p>
+							{' '}
+							<MailOutlineTwoToneIcon /> {email}
+						</p>
+						<p>
+							{' '}
+							<LocalPhoneSharpIcon /> {phoneNumber}
+						</p>
 					</div>
 					<div className='btn-container'>
 						<button
@@ -69,7 +82,7 @@ export default function Employee({
 						email={email}
 						image={image}
 						_id={_id}
-						btnText='Submit Changes'
+						btnText={<PublishedWithChangesIcon />}
 						submit={handleSubmit}
 					/>
 					<button

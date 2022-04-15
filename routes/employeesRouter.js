@@ -24,11 +24,10 @@ employeeRouter.get('/:employeeId', (req, res, next) => {
 	})
 })
 
-// TODO get employee(s) by search term localhost:9000/employees/search?employee=na  -->returns Nadia
+// get employee(s) by search term localhost:9000/employees/search?employee=na  -->returns Nadia
 employeeRouter.get('/search/employee', (req, res, next) => {
 	console.log(req.query)
 	// search term
-
 	const { employee } = req.query
 	// creates a regular expression out of the string "employee"
 	const pattern = new RegExp(employee) // -- /employee/

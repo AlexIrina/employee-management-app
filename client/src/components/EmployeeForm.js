@@ -42,11 +42,7 @@ export default function EmployeeForm({
 	}, [])
 
 	return (
-		<form
-			onSubmit={handleSubmit}
-			className='form'
-			style={{ display: 'flex', gap: '2px' }}
-		>
+		<form onSubmit={handleSubmit} className='form'>
 			<div className='inputs-container'>
 				<input
 					type='text'
@@ -56,7 +52,8 @@ export default function EmployeeForm({
 					onChange={handleChange}
 					placeholder='enter first name...'
 					className={inputs.firstName.length ? '' : 'error'}
-					required
+					minLength='3'
+					maxLength='12'
 				/>
 
 				<input
@@ -65,30 +62,36 @@ export default function EmployeeForm({
 					value={inputs.lastName}
 					onChange={handleChange}
 					placeholder='enter last name...'
-					required
+					className={inputs.lastName.length ? '' : 'error'}
+					minLength='3'
+					maxLength='12'
 				/>
 				<input
-					type='text'
+					type='email'
 					name='email'
 					value={inputs.email}
 					onChange={handleChange}
 					placeholder='enter email...'
-					required
+					className={inputs.email.length ? '' : 'error'}
+					pattern='.+@gmail\.com'
 				/>
 				<input
-					type='number'
+					type='tel'
 					name='phoneNumber'
 					value={inputs.phoneNumber}
 					onChange={handleChange}
-					placeholder='enter phone number...'
+					placeholder='333-4444-4444'
+					className={inputs.phoneNumber ? '' : 'error'}
 					required
+					pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
 				/>
 				<input
 					type='text'
 					name='classification'
 					value={inputs.classification}
 					onChange={handleChange}
-					placeholder='enter classification'
+					placeholder='enter classification...'
+					className={inputs.classification.length ? '' : 'error'}
 					required
 				/>
 				<input
@@ -97,10 +100,11 @@ export default function EmployeeForm({
 					value={inputs.image}
 					onChange={handleChange}
 					placeholder='enter image...'
+					className={inputs.image ? '' : 'error'}
 					required
 				/>
 				<br />
-				<button className='add-btn '>{btnText}</button>
+				<button className='add-btn'>{btnText}</button>
 			</div>
 		</form>
 	)

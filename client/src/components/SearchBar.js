@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
+
 export default function SearchBar({
 	placeholder,
 	data,
 	getEmployeeBySearchTerm,
+	getAllEmployees,
 }) {
 	const [filterData, setFilterData] = useState([])
 	const [enteredWord, setEnteredWord] = useState('')
@@ -12,7 +14,6 @@ export default function SearchBar({
 	const handleFilter = event => {
 		const wordEntered = event.target.value
 		setEnteredWord(wordEntered)
-		// console.log(enteredWord)
 		const newFilter = data.filter(value => {
 			return value.firstName.toLowerCase().includes(wordEntered.toLowerCase())
 		})
@@ -26,18 +27,11 @@ export default function SearchBar({
 	const clearInput = () => {
 		setFilterData([])
 		setEnteredWord('')
-	}
-
-	const handleChange = e => {
-		const { name, value } = e.target
-		setEnteredWord(prevWord => ({ ...prevWord, [name]: value }))
-		console.log(enteredWord)
+		getAllEmployees()
 	}
 
 	const handleSubmit = e => {
 		e.preventDefault()
-
-		console.log(enteredWord)
 		getEmployeeBySearchTerm(enteredWord)
 	}
 
@@ -46,7 +40,6 @@ export default function SearchBar({
 			<div className='searchInputs'>
 				<form onSubmit={handleSubmit}>
 					<input
-						// onChange={handleChange}
 						name='enteredWord'
 						type='text'
 						value={enteredWord}
