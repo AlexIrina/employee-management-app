@@ -2,12 +2,8 @@ import { render, screen } from '@testing-library/react'
 import App from '../../App'
 import '@testing-library/jest-dom'
 
-// test('renders title on the page', () => {
-// 	render(<App />)
-// 	const text = screen.getByTestId('myTitle')
-// 	expect(text).toBeInTheDocument()
-// })
-
-test('App fake test', () => {
-	expect(true).toBe(true)
+test('renders title on the page', () => {
+	render(<App />)
+	const text = screen.getByTestId('myTitle')
+	expect(text).toBeInTheDocument()
 })

@@ -37,7 +37,12 @@ export default function Employee({
 						/>
 					</div>
 					<div className='description'>
-						<p> {classification} employee</p>
+						<p>
+							{' '}
+							{classification.charAt(0).toUpperCase() +
+								classification.slice(1)}{' '}
+							Employee
+						</p>
 						<p> Email: {email}</p>
 						<p> Phone# {phoneNumber}</p>
 					</div>

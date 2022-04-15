@@ -1,0 +1,323 @@
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+@mixin buttonStyle {
+	cursor: pointer;
+	border: transparent;
+	border-radius: $borderRadius;
+	letter-spacing: $letterSpacing;
+	padding: 0.375rem 0.75rem;
+	text-transform: capitalize;
+	font-size: $fontSize18px;
+}
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css?family=Karla:400|Spectral:400');
+
+$primary-800: #282566;
+
+/* grey */
+$grey-100: #f1f5f9;
+$grey-900: #0f172a;
+/* rest of the colors */
+$black: #222;
+$white: #fff;
+
+/* fonts  */
+$headingFont: 'Spectral', serif;
+$bodyFont: 'Karla', sans-serif;
+/* rest of the vars */
+$backgroundColor: $grey-100;
+$textColor: $grey-900;
+$borderRadius: 0.25rem;
+$letterSpacing: 1px;
+$transition: 0.3s ease-in-out all;
+$fontSize18px: 18px;
+$padding: 0.375rem 0.75rem;
+$centerAlignText: center;
+$width100P: 100%;
+/* box shadow*/
+$box-shadow: 6px 6px 0px rgba(79, 7, 168, 0.15);
+body {
+	background: $backgroundColor;
+}
+
+.App {
+	@include flexCenter();
+	width: 100vw;
+	min-height: 100vh;
+	font-family: $bodyFont;
+	color: $textColor;
+	font-weight: 400;
+	line-height: 1.75;
+}
+
+h1 {
+	font-family: $headingFont;
+	margin-bottom: 20px;
+	font-weight: 700;
+	text-align: $centerAlignText;
+}
+
+/* main form */
+.form {
+	padding: $padding;
+	background-color: rebeccapurple;
+	box-shadow: $box-shadow;
+	text-align: $centerAlignText;
+	min-height: 250px;
+	max-width: 400px;
+	border-radius: $borderRadius;
+	font-size: $fontSize18px;
+}
+
+.inputs-container {
+	@include flexCenter();
+	padding: 10px;
+	width: $width100P;
+	margin-top: 10px;
+
+	input {
+		background-color: white;
+		border: 0;
+		border-radius: $borderRadius;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		font-size: $fontSize18px;
+		padding: 15px;
+		width: 300px;
+	}
+}
+
+/* search bar */
+.search {
+	@include flexCenter();
+	margin: 20px;
+	width: 340px;
+}
+
+.searchInputs {
+	display: flex;
+	outline: 1px solid;
+	border-radius: $borderRadius;
+	width: $width100P;
+	box-shadow: $box-shadow;
+}
+
+.search {
+	input {
+		background-color: white;
+		border: 0;
+		border-radius: $borderRadius;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		font-size: $fontSize18px;
+		padding: $padding;
+		height: 60px;
+		width: 300px;
+	}
+}
+
+.searchIcon {
+	height: 60px;
+	width: 50px;
+	background-color: white;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	color: $primary-800;
+}
+
+input:focus {
+	outline: none;
+}
+
+.searchIcon {
+	svg {
+		font-size: 28px;
+		color: black;
+	}
+}
+
+#clearBtn {
+	color: red;
+}
+
+.dataResult {
+	margin-top: 5px;
+	width: 300px;
+	height: 50px;
+	background-color: white;
+	box-shadow: $box-shadow;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.dataResult {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	.dataItem {
+		width: $width100P;
+		height: 50px;
+		@include flexCenter();
+		outline: 2px solid rebeccapurple;
+		font-size: $fontSize18px;
+	}
+}
+
+.dataItem {
+	p {
+		margin-left: 10px;
+	}
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		color: white;
+		background-color: rgb(159, 141, 178);
+	}
+}
+
+#clearBtn {
+	cursor: pointer;
+}
+
+.image-wrapper {
+	h2 {
+		text-align: $centerAlignText;
+	}
+}
+
+.employee-container {
+	@include flexCenter();
+	flex-wrap: wrap;
+	width: $width100P;
+	gap: 10px;
+	padding: $padding;
+}
+
+.filter-container {
+	text-align: $centerAlignText;
+	margin-bottom: 110px;
+	font-size: $fontSize18px;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.filter-form {
+	font-size: $fontSize18px;
+	outline: none;
+	width: $width100P;
+	text-align: $centerAlignText;
+	padding: $padding;
+	box-shadow: $box-shadow;
+	margin-top: 10px;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 10px;
+}
+
+.add-btn {
+	@include buttonStyle();
+	color: $white;
+	background: black;
+
+	padding: $padding;
+	width: $width100P;
+}
+
+.delete-btn {
+	@include buttonStyle();
+	color: $white;
+	background: red;
+}
+
+.edit-btn {
+	@include buttonStyle();
+	color: $primary-800;
+	background: orange;
+}
+
+.close-btn {
+	cursor: pointer;
+	border: transparent;
+	border-radius: $borderRadius;
+	position: relative;
+	top: 10px;
+	color: red;
+	width: $width100P;
+	padding: $padding;
+	background-color: white;
+}
+
+.article-summary {
+	border-radius: $borderRadius;
+	flex: 1;
+	padding: $padding;
+	background: white;
+	border: 0.5px solid black;
+	box-shadow: $box-shadow;
+	text-align: $centerAlignText;
+	min-width: 350px;
+	max-width: 400px;
+	font-size: $fontSize18px;
+	text-align: left;
+
+	.description {
+		text-align: left;
+		margin-left: 50px;
+		font-size: $fontSize18px;
+	}
+
+	.title {
+		font-size: 1.25rem;
+		margin: 0.5em 0;
+		hyphens: auto;
+		overflow-wrap: break-word;
+	}
+
+	p {
+		margin: 0;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 4;
+		overflow: hidden;
+	}
+}
+
+img {
+	width: $width100P;
+	height: 100%;
+	object-fit: contain;
+}
+
+input.error::placeholder {
+	color: rgb(192, 85, 85);
+}
+
+@media (min-width: 44rem) {
+	.employee-container {
+		flex-direction: row;
+		width: $width100P;
+	}
+}

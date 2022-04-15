@@ -42,11 +42,7 @@ export default function EmployeeForm({
 	}, [])
 
 	return (
-		<form
-			onSubmit={handleSubmit}
-			className='form'
-			style={{ display: 'flex', gap: '2px' }}
-		>
+		<form onSubmit={handleSubmit} className='form'>
 			<div className='inputs-container'>
 				<input
 					type='text'
@@ -65,6 +61,7 @@ export default function EmployeeForm({
 					value={inputs.lastName}
 					onChange={handleChange}
 					placeholder='enter last name...'
+					className={inputs.lastName.length ? '' : 'error'}
 					required
 				/>
 				<input
@@ -73,6 +70,7 @@ export default function EmployeeForm({
 					value={inputs.email}
 					onChange={handleChange}
 					placeholder='enter email...'
+					className={inputs.email.length ? '' : 'error'}
 					required
 				/>
 				<input
@@ -81,6 +79,7 @@ export default function EmployeeForm({
 					value={inputs.phoneNumber}
 					onChange={handleChange}
 					placeholder='enter phone number...'
+					className={inputs.phoneNumber ? '' : 'error'}
 					required
 				/>
 				<input
@@ -88,7 +87,8 @@ export default function EmployeeForm({
 					name='classification'
 					value={inputs.classification}
 					onChange={handleChange}
-					placeholder='enter classification'
+					placeholder='enter classification...'
+					className={inputs.classification.length ? '' : 'error'}
 					required
 				/>
 				<input
@@ -97,6 +97,7 @@ export default function EmployeeForm({
 					value={inputs.image}
 					onChange={handleChange}
 					placeholder='enter image...'
+					className={inputs.image ? '' : 'error'}
 					required
 				/>
 				<br />

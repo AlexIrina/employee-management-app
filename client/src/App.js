@@ -14,7 +14,6 @@ export default function App() {
 			.then(res => setEmployees(res.data))
 			.catch(err => console.log(err.response.data.errorMessage))
 	}
-
 	// Post a new employee
 	const addEmployee = newEmployee => {
 		axios
@@ -22,12 +21,14 @@ export default function App() {
 			.then(res => setEmployees(prevEmployees => [...prevEmployees, res.data]))
 			.catch(err => console.log(err))
 	}
-
 	// delete an employee
 	const deleteEmployee = employeeId => {
 		axios
 			.delete(`/employees/${employeeId}`)
-			.then(res => setEmployees(res.data))
+			.then(res => {
+				console.log('response', res.data)
+				setEmployees(res.data)
+			})
 			.catch(err => console.log(err))
 	}
 	// update employee
@@ -78,6 +79,7 @@ export default function App() {
 				placeholder='Search By Name... '
 				data={employees}
 				getEmployeeBySearchTerm={getEmployeeBySearchTerm}
+				getAllEmployees={getAllEmployees}
 			/>
 
 			<div className='filter-container'>
