@@ -5,6 +5,7 @@ import Employee from './components/Employee'
 import SearchBar from './components/SearchBar'
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt'
 import PersonSearchIcon from '@mui/icons-material/PersonSearch'
+
 export default function App() {
 	const [employees, setEmployees] = useState([])
 
@@ -72,7 +73,11 @@ export default function App() {
 
 	return (
 		<div className='App'>
-			<h1 data-testid='myTitle'>Employee Management App</h1>
+			<h1 data-testid='myTitle'>
+				Employee
+				<strong>HR</strong>
+				<plus>+</plus>
+			</h1>
 
 			<EmployeeForm submit={addEmployee} btnText={<PersonAddAltIcon />} />
 
