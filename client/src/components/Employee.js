@@ -24,7 +24,6 @@ export default function Employee({
 		setEditToggle(false)
 		updateEmployee(inputs, _id)
 	}
-	const randomId = Math.floor(Math.random() * 6000) + 1
 
 	return (
 		<article className='article-summary'>
@@ -48,7 +47,7 @@ export default function Employee({
 							Employee
 						</p>
 						<p id='employeeId'>
-							<Grid3x3Icon /> <span>{randomId}</span>
+							<Grid3x3Icon /> <span>{_id.slice(_id.length - 5)}</span>
 						</p>
 						<p id='employeeEmail'>
 							{' '}

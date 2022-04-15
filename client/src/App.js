@@ -28,8 +28,6 @@ export default function App() {
 		axios
 			.delete(`/employees/${employeeId}`)
 			.then(res => {
-				console.log('response', res.data)
-
 				setEmployees(prevEmployees =>
 					prevEmployees.filter(employee => employee._id !== employeeId)
 				)
