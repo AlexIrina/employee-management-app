@@ -99,7 +99,7 @@ export default function EmployeeForm({
 					name='image'
 					value={inputs.image}
 					onChange={handleChange}
-					placeholder='enter image...'
+					placeholder='enter image url...'
 					className={inputs.image ? '' : 'error'}
 					required
 				/>
