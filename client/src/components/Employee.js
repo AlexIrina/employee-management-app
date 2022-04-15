@@ -52,11 +52,13 @@ export default function Employee({
 						</p>
 						<p id='employeeEmail'>
 							{' '}
-							<MailOutlineTwoToneIcon /> {email}
+							<MailOutlineTwoToneIcon />
+							<a href={`mailto:${email}`}>{email}</a>
 						</p>
 						<p id='employeeNumber'>
 							{' '}
-							<LocalPhoneSharpIcon /> {phoneNumber}
+							<LocalPhoneSharpIcon />
+							<a href={`tel::${phoneNumber}`}>{phoneNumber}</a>
 						</p>
 					</div>
 					<div className='btn-container'>
