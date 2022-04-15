@@ -29,7 +29,10 @@ export default function App() {
 			.delete(`/employees/${employeeId}`)
 			.then(res => {
 				console.log('response', res.data)
-				setEmployees(res.data)
+
+				setEmployees(prevEmployees =>
+					prevEmployees.filter(employee => employee._id !== employeeId)
+				)
 			})
 			.catch(err => console.log(err))
 	}
