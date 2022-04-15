@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
+
 export default function SearchBar({
 	placeholder,
 	data,

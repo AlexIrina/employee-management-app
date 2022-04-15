@@ -52,7 +52,8 @@ export default function EmployeeForm({
 					onChange={handleChange}
 					placeholder='enter first name...'
 					className={inputs.firstName.length ? '' : 'error'}
-					required
+					minLength='3'
+					maxLength='12'
 				/>
 
 				<input
@@ -62,25 +63,27 @@ export default function EmployeeForm({
 					onChange={handleChange}
 					placeholder='enter last name...'
 					className={inputs.lastName.length ? '' : 'error'}
-					required
+					minLength='3'
+					maxLength='12'
 				/>
 				<input
-					type='text'
+					type='email'
 					name='email'
 					value={inputs.email}
 					onChange={handleChange}
 					placeholder='enter email...'
 					className={inputs.email.length ? '' : 'error'}
-					required
+					pattern='.+@gmail\.com'
 				/>
 				<input
-					type='number'
+					type='tel'
 					name='phoneNumber'
 					value={inputs.phoneNumber}
 					onChange={handleChange}
-					placeholder='enter phone number...'
+					placeholder='333-4444-4444'
 					className={inputs.phoneNumber ? '' : 'error'}
 					required
+					pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
 				/>
 				<input
 					type='text'
@@ -101,7 +104,7 @@ export default function EmployeeForm({
 					required
 				/>
 				<br />
-				<button className='add-btn '>{btnText}</button>
+				<button className='add-btn'>{btnText}</button>
 			</div>
 		</form>
 	)
