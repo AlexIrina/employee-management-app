@@ -76,7 +76,7 @@ export default function App() {
 			<h1 data-testid='myTitle'>
 				Employee
 				<strong>HR</strong>
-				<plus>+</plus>
+				<span>+</span>
 			</h1>
 
 			<EmployeeForm submit={addEmployee} btnText={<PersonAddAltIcon />} />
@@ -89,7 +89,7 @@ export default function App() {
 			/>
 
 			<div className='filter-container'>
-				<label class='custom-select'>
+				<label className='custom-select'>
 					<h2>
 						<PersonSearchIcon /> Filter Employees
 					</h2>

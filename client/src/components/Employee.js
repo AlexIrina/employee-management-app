@@ -48,7 +48,7 @@ export default function Employee({
 							Employee
 						</p>
 						<p id='employeeId'>
-							<Grid3x3Icon /> <id>{randomId}</id>
+							<Grid3x3Icon /> <span>{randomId}</span>
 						</p>
 						<p id='employeeEmail'>
 							{' '}
