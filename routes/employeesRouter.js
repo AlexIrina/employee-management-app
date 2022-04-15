@@ -95,13 +95,7 @@ employeeRouter.delete('/:employeeId', (req, res, next) => {
 				res.status(500)
 				return next(err)
 			}
-			return res
-				.status(200)
-				.send(
-					`Successfully deleted ${
-						deletedEmployee.firstName + ' ' + deletedEmployee.lastName
-					} from the database`
-				)
+			return res.status(200).send(deletedEmployee)
 		}
 	)
 })
