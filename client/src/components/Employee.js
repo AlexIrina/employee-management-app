@@ -6,6 +6,7 @@ import ModeEditIcon from '@mui/icons-material/ModeEdit'
 import MailOutlineTwoToneIcon from '@mui/icons-material/MailOutlineTwoTone'
 import LocalPhoneSharpIcon from '@mui/icons-material/LocalPhoneSharp'
 import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges'
+import Grid3x3Icon from '@mui/icons-material/Grid3x3'
 export default function Employee({
 	firstName,
 	lastName,
@@ -23,6 +24,7 @@ export default function Employee({
 		setEditToggle(false)
 		updateEmployee(inputs, _id)
 	}
+	const randomId = Math.floor(Math.random() * 6000) + 1
 
 	return (
 		<article className='article-summary'>
@@ -45,11 +47,14 @@ export default function Employee({
 								classification.slice(1)}{' '}
 							Employee
 						</p>
-						<p>
+						<p id='employeeId'>
+							<Grid3x3Icon /> <id>{randomId}</id>
+						</p>
+						<p id='employeeEmail'>
 							{' '}
 							<MailOutlineTwoToneIcon /> {email}
 						</p>
-						<p>
+						<p id='employeeNumber'>
 							{' '}
 							<LocalPhoneSharpIcon /> {phoneNumber}
 						</p>
